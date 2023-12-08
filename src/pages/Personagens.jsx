@@ -1,6 +1,8 @@
 function Personagens() {
   return (
-    <h1>Personagens</h1>
+    <main>
+      <h1>Personagens</h1>
+    </main>
   )
 }
 

@@ -1,6 +1,8 @@
 function Historia() {
   return (
-    <h1>História</h1>
+    <main>
+      <h1>História</h1>
+    </main>
   )
 }
 
