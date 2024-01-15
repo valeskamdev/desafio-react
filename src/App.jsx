@@ -1,27 +1,27 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import Header from './components/Header.jsx';
-import Container from './components/Container/Container.jsx';
-import Home from './pages/Home.jsx';
-import Historia from './pages/Historia.jsx';
-import Personagens from './pages/Personagens.jsx';
-import './index.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Menu from "./components/Menu";
+import Home from "./pages/Home";
+import ClassicRock from "./pages/ClassicRock";
+import HeavyMetal from "./pages/HeavyMetal";
+import Pagina404 from "./pages/Pagina404";
+import Conteudo from "./components/Conteudo";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Container>
-          <Header/>
-            <Routes>
-              <Route Component={ Home } exact path="/" />
-              <Route Component={ Historia } path="/historia" />
-              <Route Component={ Personagens } path="/personagens" />
-            </Routes>
-        </Container>
+        <Menu />
+        <Conteudo>
+          <Routes>
+            <Route exact path="/" Component={Home} />
+            <Route path="/classic-rock" Component={ClassicRock} />
+            <Route path="/heavy-metal" Component={HeavyMetal} />
+            <Route path="*" Component={Pagina404} />
+          </Routes>
+        </Conteudo>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
